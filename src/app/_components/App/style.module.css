@@ -1,0 +1,194 @@
+.confettiReward1 {
+  left: 25%;
+  position: fixed;
+  top: 25%;
+  z-index: 1;
+}
+
+.confettiReward2 {
+  left: 75%;
+  position: fixed;
+  top: 75%;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 24px;
+  position: relative;
+}
+
+.sankakuGarland1,
+.sankakuGarland2 {
+  aspect-ratio: 800 / 229;
+  max-width: 600px;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.sankakuGarland1 {
+  filter: drop-shadow(-6px 6px rgb(0 0 0 / 0.5));
+  left: -2.5%;
+  rotate: -25deg;
+}
+
+.sankakuGarland2 {
+  filter: drop-shadow(6px 6px rgb(0 0 0 / 0.5));
+  right: -2.5%;
+  rotate: 25deg;
+}
+
+.inner {
+  width: min(100%, 800px);
+}
+
+.header {
+  padding: 72px 0;
+}
+
+.h2 {
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 10.8rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.detailContainer {
+  padding: 48px 0 0;
+}
+
+.period {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.place {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  gap: 96px;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.h3 {
+  border-bottom: 1px solid #fff;
+  font-size: 3rem;
+  padding: 0 24px 6px;
+  text-align: center;
+}
+
+.guidanceList {
+  backdrop-filter: blur(3px);
+  background: rgb(255 255 255 / 0.125);
+  border: 3px solid #fff;
+  border-radius: 12px;
+  display: grid;
+  font-size: 2.1rem;
+  gap: 24px 0;
+  grid-template: auto / auto 1fr;
+  padding: 36px min(48px, 5dvw);
+}
+
+.teamsContainer {
+  display: grid;
+  gap: 36px;
+  @media (width >= 768px) {
+    grid-template: auto / 1fr 1fr;
+  }
+}
+
+.teamContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.h4 {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.teamList {
+  backdrop-filter: blur(3px);
+  background: rgb(255 255 255 / 0.125);
+  border: 3px solid #fff;
+  border-radius: 12px;
+  display: grid;
+  font-size: 2.4rem;
+  gap: 12px 0;
+  grid-template: auto / auto 1fr;
+  padding: 24px 36px;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.iconImageContainer {
+  border-radius: 50dvmax;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.16);
+  display: block;
+  height: 36px !important;
+  overflow: hidden;
+  position: relative;
+  width: 36px !important;
+}
+
+.note {
+  background: #fff;
+  height: inherit;
+  width: inherit;
+}
+
+.twitcasting {
+  background: linear-gradient(
+    135deg,
+    rgb(8 146 253 / 1) 0%,
+    rgb(8 188 209 / 1) 75%,
+    rgb(8 230 159 / 1) 100%
+  );
+}
+
+.participateContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.participate {
+  background: #416599;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  font-size: 3.6rem;
+  font-weight: 700;
+  padding: 12px 36px;
+  text-decoration: none;
+}
+
+.footer {
+  padding: 72px 0;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
