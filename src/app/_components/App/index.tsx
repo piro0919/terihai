@@ -148,11 +148,10 @@ export default function App(): React.JSX.Element {
                   <dl className={styles.teamList}>
                     <dt>ツクシ ミヲ：</dt>
                     <dd>
-                      {" "}
                       <div className={styles.linksContainer}>
                         <a
                           className={styles.iconImageContainer}
-                          href="https://note.com/katy_amanda2525"
+                          href="https://note.com/miotkc_note"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -168,11 +167,11 @@ export default function App(): React.JSX.Element {
                           className={styles.iconImageContainer}
                           rel="noopener noreferrer"
                           target="_blank"
-                          url="https://x.com/pypynanon"
+                          url="https://x.com/miotkc"
                         />
                         <a
                           className={styles.iconImageContainer}
-                          href="https://twitcasting.tv/c:tytou"
+                          href="https://twitcasting.tv/miotkc"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -188,11 +187,10 @@ export default function App(): React.JSX.Element {
                     </dd>
                     <dt>piro：</dt>
                     <dd>
-                      {" "}
                       <div className={styles.linksContainer}>
                         <a
                           className={styles.iconImageContainer}
-                          href="https://note.com/katy_amanda2525"
+                          href="https://note.com/kkweb"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -208,11 +206,11 @@ export default function App(): React.JSX.Element {
                           className={styles.iconImageContainer}
                           rel="noopener noreferrer"
                           target="_blank"
-                          url="https://x.com/pypynanon"
+                          url="https://x.com/piro0919"
                         />
                         <a
                           className={styles.iconImageContainer}
-                          href="https://twitcasting.tv/c:tytou"
+                          href="https://twitcasting.tv/piro0919"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
