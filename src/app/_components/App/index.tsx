@@ -231,7 +231,7 @@ export default function App(): React.JSX.Element {
             <div className={styles.participateContainer}>
               <a
                 className={styles.participate}
-                href="https://forms.gle/iA4c6Rjd7UXjF4hP9"
+                href="https://forms.gle/1dzii4mtz3Lj5HLQ9"
                 rel="noopener noreferrer"
               >
                 参加する 💪
