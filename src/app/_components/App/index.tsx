@@ -143,6 +143,25 @@ export default function App(): React.JSX.Element {
                         </a>
                       </div>
                     </dd>
+                    <dt>𝓚𝓞-𝓚𝓤𝓝：</dt>
+                    <dd>
+                      <div className={styles.linksContainer}>
+                        <a
+                          className={styles.iconImageContainer}
+                          href="https://note.com/Ko_kun1212"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt="note"
+                            className={styles.note}
+                            fill={true}
+                            quality={100}
+                            src={note}
+                          />
+                        </a>
+                      </div>
+                    </dd>
                   </dl>
                 </div>
                 <div className={styles.teamContainer}>
