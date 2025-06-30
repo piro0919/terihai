@@ -245,6 +245,31 @@ export default function App(): React.JSX.Element {
                         </a>
                       </div>
                     </dd>
+                    <dt>ごめごめ</dt>
+                    <dd>
+                      <div className={styles.linksContainer}>
+                        <a
+                          className={styles.iconImageContainer}
+                          href="https://note.com/sound_arts"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt="note"
+                            className={styles.note}
+                            fill={true}
+                            quality={100}
+                            src={note}
+                          />
+                        </a>
+                        <SocialIcon
+                          className={styles.iconImageContainer}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          url="https://x.com/Sound_Arts"
+                        />
+                      </div>
+                    </dd>
                   </dl>
                 </div>
               </div>
