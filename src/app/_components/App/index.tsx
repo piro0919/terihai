@@ -83,6 +83,8 @@ export default function App(): React.JSX.Element {
                 </dd>
                 <dt>勝敗：</dt>
                 <dd>期間内に投稿された記事の合計いいね数が多いチームの勝利</dd>
+                <dt>集計期間：</dt>
+                <dd>7月21日（月）24:00 まで</dd>
                 <dt>優勝賞品：</dt>
                 <dd>
                   <a
