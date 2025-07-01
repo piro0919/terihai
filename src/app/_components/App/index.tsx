@@ -162,6 +162,45 @@ export default function App(): React.JSX.Element {
                         </a>
                       </div>
                     </dd>
+                    <dt>アルティア：</dt>
+                    <dd>
+                      <div className={styles.linksContainer}>
+                        <a
+                          className={styles.iconImageContainer}
+                          href="https://note.com/dandy_parrot4915"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt="note"
+                            className={styles.note}
+                            fill={true}
+                            quality={100}
+                            src={note}
+                          />
+                        </a>
+                        <SocialIcon
+                          className={styles.iconImageContainer}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          url="https://x.com/re_alter_"
+                        />
+                        <a
+                          className={styles.iconImageContainer}
+                          href="https://twitcasting.tv/c:kilo017"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt="ツイキャス"
+                            className={styles.twitcasting}
+                            fill={true}
+                            quality={100}
+                            src={twitcasting}
+                          />
+                        </a>
+                      </div>
+                    </dd>
                   </dl>
                 </div>
                 <div className={styles.teamContainer}>
@@ -206,6 +245,31 @@ export default function App(): React.JSX.Element {
                         </a>
                       </div>
                     </dd>
+                    <dt>ごめごめ</dt>
+                    <dd>
+                      <div className={styles.linksContainer}>
+                        <a
+                          className={styles.iconImageContainer}
+                          href="https://note.com/sound_arts"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt="note"
+                            className={styles.note}
+                            fill={true}
+                            quality={100}
+                            src={note}
+                          />
+                        </a>
+                        <SocialIcon
+                          className={styles.iconImageContainer}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          url="https://x.com/Sound_Arts"
+                        />
+                      </div>
+                    </dd>
                     <dt>piro：</dt>
                     <dd>
                       <div className={styles.linksContainer}>
@@ -243,31 +307,6 @@ export default function App(): React.JSX.Element {
                             src={twitcasting}
                           />
                         </a>
-                      </div>
-                    </dd>
-                    <dt>ごめごめ</dt>
-                    <dd>
-                      <div className={styles.linksContainer}>
-                        <a
-                          className={styles.iconImageContainer}
-                          href="https://note.com/sound_arts"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          <Image
-                            alt="note"
-                            className={styles.note}
-                            fill={true}
-                            quality={100}
-                            src={note}
-                          />
-                        </a>
-                        <SocialIcon
-                          className={styles.iconImageContainer}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          url="https://x.com/Sound_Arts"
-                        />
                       </div>
                     </dd>
                   </dl>
