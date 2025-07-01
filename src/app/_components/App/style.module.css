@@ -42,7 +42,7 @@
 }
 
 .inner {
-  width: min(100%, 800px);
+  width: min(100%, 920px);
 }
 
 .header {
@@ -78,11 +78,10 @@
 
 .main {
   display: grid;
-  gap: 96px;
+  gap: 72px;
 }
 
 .section {
-  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -95,7 +94,8 @@
   text-align: center;
 }
 
-.guidanceList {
+.guidanceList,
+.latestNotesList {
   backdrop-filter: blur(3px);
   background: rgb(255 255 255 / 0.125);
   border: 3px solid #fff;
@@ -105,6 +105,21 @@
   gap: 24px 0;
   grid-template: auto / auto 1fr;
   padding: 36px min(48px, 5dvw);
+}
+
+.allShowButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.allShowButton {
+  background: #416599;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 6px 24px;
+  text-decoration: none;
 }
 
 .teamsContainer {
@@ -191,4 +206,40 @@
 .copyright {
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.modalContainer {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background: rgb(255 255 255 / 0.5);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+}
+
+.content {
+  background-image: url("/background.jpg");
+  border: 3px solid #fff;
+  border-radius: 12px;
+  max-height: 90dvh;
+  overflow: auto;
+  position: relative;
+}
+
+.content .latestNotesList {
+  background: rgb(65 101 153 / 0.75);
+  border: none;
+}
+
+.closeButton {
+  background: #416599;
+  border: 3px solid #fff;
+  border-radius: 50dvmax;
+  font-size: 1.8rem;
+  inset: 0 0 auto auto;
+  margin: 12px;
+  padding: 9px;
+  position: fixed;
 }
