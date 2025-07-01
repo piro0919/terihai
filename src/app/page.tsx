@@ -11,7 +11,7 @@ async function getNotes(id: string): Promise<
   }[]
 > {
   const response = await fetch(`https://note.com/${id}/rss`, {
-    next: { revalidate: 86400 },
+    next: { revalidate: 21600 },
   });
   const text = await response.text();
   const parser = new XMLParser();
