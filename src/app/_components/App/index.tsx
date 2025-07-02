@@ -306,7 +306,7 @@ export default function App({ notes }: AppProps): React.JSX.Element {
                           </a>
                         </div>
                       </dd>
-                      <dt>ごめごめ</dt>
+                      <dt>ごめごめ：</dt>
                       <dd>
                         <div className={styles.linksContainer}>
                           <a
@@ -329,6 +329,25 @@ export default function App({ notes }: AppProps): React.JSX.Element {
                             target="_blank"
                             url="https://x.com/Sound_Arts"
                           />
+                        </div>
+                      </dd>
+                      <dt>チョコチップとハナジデール：</dt>
+                      <dd>
+                        <div className={styles.linksContainer}>
+                          <a
+                            className={styles.iconImageContainer}
+                            href="https://note.com/chokochipp55"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <Image
+                              alt="note"
+                              className={styles.note}
+                              fill={true}
+                              quality={100}
+                              src={note}
+                            />
+                          </a>
                         </div>
                       </dd>
                       <dt>piro：</dt>
