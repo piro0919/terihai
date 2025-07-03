@@ -20,9 +20,6 @@ async function getNotes(id: string): Promise<
       channel: { item },
     },
   } = parser.parse(text);
-
-  console.log(item);
-
   const notes = (
     Array.isArray(item)
       ? (item as {
