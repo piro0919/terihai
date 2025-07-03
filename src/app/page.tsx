@@ -20,6 +20,9 @@ async function getNotes(id: string): Promise<
       channel: { item },
     },
   } = parser.parse(text);
+
+  console.log(item);
+
   const notes = (
     Array.isArray(item)
       ? (item as {
@@ -28,7 +31,7 @@ async function getNotes(id: string): Promise<
           pubDate: string;
           title: string;
         }[])
-      : [item]
+      : [item].filter((item) => item)
   )
     .filter(
       ({ pubDate }) =>
@@ -50,8 +53,10 @@ export default async function Page(): Promise<React.JSX.Element> {
     "katy_amanda2525",
     "Ko_kun1212",
     "dandy_parrot4915",
+    "alcohol_racing",
     "miotkc_note",
     "sound_arts",
+    "chokochipp55",
     "kkweb",
   ];
   // eslint-disable-next-line @typescript-eslint/promise-function-async
