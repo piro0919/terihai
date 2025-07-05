@@ -281,6 +281,25 @@ export default function App({ notes }: AppProps): React.JSX.Element {
                           </a>
                         </div>
                       </dd>
+                      <dt>yusaku：</dt>
+                      <dd>
+                        <div className={styles.linksContainer}>
+                          <a
+                            className={styles.iconImageContainer}
+                            href="https://note.com/yusaku0820"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <Image
+                              alt="note"
+                              className={styles.note}
+                              fill={true}
+                              quality={100}
+                              src={note}
+                            />
+                          </a>
+                        </div>
+                      </dd>
                     </dl>
                   </div>
                   <div className={styles.teamContainer}>

@@ -51,6 +51,7 @@ export default async function Page(): Promise<React.JSX.Element> {
     "Ko_kun1212",
     "dandy_parrot4915",
     "alcohol_racing",
+    "yusaku0820",
     "miotkc_note",
     "sound_arts",
     "chokochipp55",
