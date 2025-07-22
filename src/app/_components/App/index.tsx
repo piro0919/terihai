@@ -34,12 +34,20 @@ export type AppProps = {
 
 export default function App({ notes }: AppProps): React.JSX.Element {
   const { reward: confettiReward1 } = useReward("confettiReward1", "confetti", {
-    elementSize: 12,
+    elementCount: 100,
+    elementSize: 15,
     lifetime: 400,
     spread: 100,
   });
   const { reward: confettiReward2 } = useReward("confettiReward2", "confetti", {
-    elementSize: 12,
+    elementCount: 100,
+    elementSize: 15,
+    lifetime: 400,
+    spread: 100,
+  });
+  const { reward: confettiReward3 } = useReward("confettiReward3", "confetti", {
+    elementCount: 100,
+    elementSize: 15,
     lifetime: 400,
     spread: 100,
   });
@@ -51,24 +59,39 @@ export default function App({ notes }: AppProps): React.JSX.Element {
   const { hide, isShow, Portal, show } = usePortal({
     defaultShow: false,
   });
+  const {
+    hide: hide2,
+    isShow: isShow2,
+    Portal: Portal2,
+    show: show2,
+  } = usePortal({
+    defaultShow: false,
+  });
 
   useShowWindowSize({
     disable: process.env.NODE_ENV === "production",
   });
 
+  useEffect(() => (isShow ? noScroll.on() : noScroll.off()), [isShow]);
+  useEffect(() => (isShow2 ? noScroll.on() : noScroll.off()), [isShow2]);
+
   useEffect(() => {
+    if (!isShow2) {
+      return;
+    }
+
     setTimeout(() => confettiReward1(), 500);
     setTimeout(() => confettiReward2(), 1000);
+    setTimeout(() => confettiReward3(), 1500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => (isShow ? noScroll.on() : noScroll.off()), [isShow]);
+  }, [isShow2]);
 
   return (
     <>
       <PageBorder borderColor="#fff" borderSize={6} roundSize={6} zIndex={1}>
         <span className={styles.confettiReward1} id="confettiReward1" />
         <span className={styles.confettiReward2} id="confettiReward2" />
+        <span className={styles.confettiReward3} id="confettiReward3" />
         <div className={styles.container}>
           <Image
             alt=""
@@ -432,13 +455,9 @@ export default function App({ notes }: AppProps): React.JSX.Element {
                 </div>
               </section>
               <div className={styles.participateContainer}>
-                <a
-                  className={styles.participate}
-                  href="https://forms.gle/1dzii4mtz3Lj5HLQ9"
-                  rel="noopener noreferrer"
-                >
-                  参加する 💪
-                </a>
+                <button className={styles.participate} onClick={show2}>
+                  結果発表 🎉
+                </button>
               </div>
             </main>
             <footer className={styles.footer}>
@@ -469,6 +488,35 @@ export default function App({ notes }: AppProps): React.JSX.Element {
           <CloseButton className={styles.closeButton} onClick={hide} />
         </div>
       </Portal>
+      <Portal2>
+        <div className={styles.modalContainer} onClick={hide2}>
+          <div className={styles.content} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.resultContainer}>
+              <h4 className={styles.subTitle}>
+                <ruby>
+                  あか組<rp>(</rp>
+                  <rt>てりチーム</rt>
+                  <rp>)</rp>
+                </ruby>
+                ：125 - 120：
+                <ruby>
+                  しろ組<rp>(</rp>
+                  <rt>ツクシ ミヲチーム</rt>
+                  <rp>)</rp>
+                </ruby>
+                で
+              </h4>
+              <h3 className={styles.h3}>あか組の勝利です🎉</h3>
+              <p className={styles.description}>
+                あか組のみなさん おめでとうございます‼️
+                <br />
+                参加してくださった方々 お疲れ様 & ありがとうございました‼️
+              </p>
+            </div>
+          </div>
+          <CloseButton className={styles.closeButton} onClick={hide2} />
+        </div>
+      </Portal2>
     </>
   );
 }

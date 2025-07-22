@@ -1,14 +1,21 @@
 .confettiReward1 {
   left: 25%;
   position: fixed;
-  top: 25%;
+  top: 30%;
   z-index: 1;
 }
 
 .confettiReward2 {
   left: 75%;
   position: fixed;
-  top: 75%;
+  top: 60%;
+  z-index: 1;
+}
+
+.confettiReward3 {
+  left: 25%;
+  position: fixed;
+  top: 90%;
   z-index: 1;
 }
 
@@ -226,12 +233,15 @@
 }
 
 .content {
-  background-image: url("/background.jpg");
   border: 3px solid #fff;
   border-radius: 12px;
   max-height: 90dvh;
   overflow: auto;
   position: relative;
+}
+
+.content:has(.latestNotesList) {
+  background-image: url("/background.jpg");
 }
 
 .content .latestNotesList {
@@ -248,4 +258,31 @@
   margin: 12px;
   padding: 9px;
   position: fixed;
+}
+
+.content:has(.resultContainer) {
+  background: #416599;
+}
+
+.resultContainer {
+  padding: 24px 12px;
+}
+
+.subTitle {
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.resultContainer .h3 {
+  display: flex;
+  font-size: 3.6rem;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.description {
+  font-size: 1.8rem;
+  padding: 12px 0;
+  text-align: center;
 }
