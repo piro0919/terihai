@@ -2,9 +2,9 @@
   "dependencies": {
     "@chakra-ui/close-button": "2.1.1",
     "clsx": "2.1.1",
-    "dayjs": "1.11.13",
+    "dayjs": "1.11.18",
     "fast-xml-parser": "5.2.5",
-    "next": "15.5.0",
+    "next": "15.5.2",
     "no-scroll": "2.1.1",
     "react": "^19.0.0",
     "react-cool-portal": "1.2.0",
