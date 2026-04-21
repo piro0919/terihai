@@ -1,4 +1,4 @@
-# てり杯 / Teri-hai
+# Teri-hai
 
 > Web app for the Teri-hai tournament.
 
@@ -22,3 +22,7 @@
 pnpm install
 pnpm dev
 ```
+
+## 📄 License
+
+MIT
