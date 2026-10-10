@@ -1,40 +1,35 @@
-import { FlatCompat } from "@eslint/eslintrc";
+import { fixupPluginRules } from "@eslint/compat";
 import js from "@eslint/js";
+import magicNumbers from "@piro0919/eslint-config";
 import tsParser from "@typescript-eslint/parser";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+import prettier from "eslint-config-prettier/flat";
 import css from "eslint-plugin-css";
 import cssModules from "eslint-plugin-css-modules";
 import ext from "eslint-plugin-ext";
+import filenamesPlugin from "eslint-plugin-filenames";
+import noUnsanitized from "eslint-plugin-no-unsanitized";
 import perfectionist from "eslint-plugin-perfectionist";
 import promise from "eslint-plugin-promise";
+import security from "eslint-plugin-security";
 import unusedImports from "eslint-plugin-unused-imports";
 import writeGoodComments from "eslint-plugin-write-good-comments";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { fixupPluginRules } from "@eslint/compat";
-import filenamesPlugin from "eslint-plugin-filenames";
+import { defineConfig, globalIgnores } from "eslint/config";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const compat = new FlatCompat({
-  allConfig: js.configs.all,
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
-const eslintConfig = [
+const eslintConfig = defineConfig([
   {
     files: ["**/*.{js,jsx,ts,tsx,mjs}"],
   },
-  ...compat.extends(
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:css/recommended",
-    "plugin:no-unsanitized/recommended-legacy",
-    "plugin:promise/recommended",
-    "plugin:security/recommended-legacy",
-    "next/core-web-vitals",
-    "next/typescript",
-    "prettier",
-  ),
+  js.configs.recommended,
+  css.configs["flat/recommended"],
+  noUnsanitized.configs.recommended,
+  promise.configs["flat/recommended"],
+  security.configs.recommended,
+  ...nextVitals,
+  ...nextTs,
+  ...magicNumbers(),
+  prettier,
   {
     languageOptions: {
       ecmaVersion: 2024,
@@ -159,11 +154,11 @@ const eslintConfig = [
             "internal",
             ["parent", "sibling"],
             "index",
-            "object",
+            "ts-equals-import",
             "type",
             "unknown",
           ],
-          newlinesBetween: "never",
+          newlinesBetween: 0,
           order: "asc",
           type: "natural",
         },
@@ -178,7 +173,7 @@ const eslintConfig = [
       "perfectionist/sort-jsx-props": [
         "error",
         {
-          groups: ["multiline", "shorthand", "unknown"],
+          groups: ["multiline-prop", "shorthand-prop", "unknown"],
           order: "asc",
           type: "natural",
         },
@@ -239,6 +234,20 @@ const eslintConfig = [
       "write-good-comments/write-good-comments": "error",
     },
   },
-];
+  // 名前が決まっているファイル（Next の設定と型の宣言）は、ファイル名の決まりから外す
+  {
+    files: ["next.config.ts", "**/*.d.ts"],
+    rules: {
+      "filenames/match-exported": "off",
+      "filenames/match-regex": "off",
+    },
+  },
+  // ツールの設定ファイルは tsconfig に入っておらず、型を使う検査で読めない。前の next lint も見ていなかった
+  globalIgnores([
+    ".prettierrc.js",
+    "commitlint.config.js",
+    "eslint.config.mjs",
+  ]),
+]);
 
 export default eslintConfig;
