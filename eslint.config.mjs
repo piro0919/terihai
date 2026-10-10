@@ -15,7 +15,7 @@ import promise from "eslint-plugin-promise";
 import security from "eslint-plugin-security";
 import unusedImports from "eslint-plugin-unused-imports";
 import writeGoodComments from "eslint-plugin-write-good-comments";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
   {
@@ -234,6 +234,20 @@ const eslintConfig = defineConfig([
       "write-good-comments/write-good-comments": "error",
     },
   },
+  // 名前が決まっているファイル（Next の設定と型の宣言）は、ファイル名の決まりから外す
+  {
+    files: ["next.config.ts", "**/*.d.ts"],
+    rules: {
+      "filenames/match-exported": "off",
+      "filenames/match-regex": "off",
+    },
+  },
+  // ツールの設定ファイルは tsconfig に入っておらず、型を使う検査で読めない。前の next lint も見ていなかった
+  globalIgnores([
+    ".prettierrc.js",
+    "commitlint.config.js",
+    "eslint.config.mjs",
+  ]),
 ]);
 
 export default eslintConfig;
